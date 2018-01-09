@@ -11,8 +11,6 @@ import java.util.concurrent.TimeoutException;
  * @date 2018/1/9 9:43
  */
 public class Consumers {
-    public static final String DIRECT_EXCHANGE = "DIRECT_EXCHANGE";
-    public static final String TOPIC_EXHCNAGE = "TOPIC_EXCHANGE";
 
     public static void main(String[] args) throws IOException, TimeoutException {
         String d_queue1 = "D_X_QUEUE1";
@@ -44,5 +42,8 @@ public class Consumers {
         };
         channel.basicConsume(d_queue3, consumer02);
         channel.basicConsume(d_queue4, consumer02);
+
+        channel.close();
+        connection.close();
     }
 }
